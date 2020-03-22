@@ -72,11 +72,7 @@ $(document).ready(() => {
 
         }
          //get weather data for forecast dates
-          
-            console.log(iDateDay);
-            console.log(forecastDateDay);
-            console.log(iDateDay === forecastDateDay);
-
+                    
         if (iDateDay === forecastDateDay) { // capture if index date is equal to forecast date
 
             forecastDate = iDate.format("DD/MM/YYYY")
