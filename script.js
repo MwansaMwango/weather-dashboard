@@ -148,7 +148,6 @@ $(document).ready(() => {
     
     $("#cities-group").empty();
     var savedCities = localStorage.getItem("storedCities");
-    console.log(savedCities.length);
 
       if  (savedCities) { // if saved cities exist
         savedCities = JSON.parse(savedCities);
