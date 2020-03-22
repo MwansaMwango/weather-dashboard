@@ -28,7 +28,7 @@ $(document).ready(() => {
     
   function generateWeatherData (city) {
       var APIkey = "e71f6c6dc07b2b2d8673b9606f186bc7";
-      var queryForecastURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=metric&appid=" + APIkey;
+      var queryForecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=metric&appid=" + APIkey;
         
       $.ajax({
         url: queryForecastURL,
@@ -53,7 +53,7 @@ $(document).ready(() => {
 
       for (var i = 0; i < response.list.length; i++) { // iterate through the returned object 30hourly waether data
         
-        var weatherIcon = "http://openweathermap.org/img/w/" + response.list[i].weather[0].icon + ".png";
+        var weatherIcon = "https://openweathermap.org/img/w/" + response.list[i].weather[0].icon + ".png";
         var iDate = moment(response.list[i].dt_txt); // get response index date/timestamp from response array list into moment.js object
         var iDateDay = iDate.format("DD"); 
 
