@@ -88,11 +88,11 @@ $(document).ready(() => {
             
             cardTemp = $("<p>");
             cardTemp.addClass("card-text");
-            cardTemp.text("Temp: " + response.list[i].main.temp +" \xB0C");
+            cardTemp.text("Temp: " + response.list[i].main.temp +"\xB0C");
             
             cardHumidity = $("<p>");
             cardHumidity.addClass("card-text");
-            cardHumidity.text("Humidity: " + response.list[i].main.humidity +" %");
+            cardHumidity.text("Humidity: " + response.list[i].main.humidity +"%");
             
             cardBody.append(cardTitle);        
             cardBody.append(cardImg);
