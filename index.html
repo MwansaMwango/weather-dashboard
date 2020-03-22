@@ -1,12 +1,118 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Hello, world!</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <!--  Fonts and icons  -->
-      <!--     Fonts and icons     -->
-<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet">
-<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en-au">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <!-- Use Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Use Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
+    <!-- Use CSS -->
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="d-flex flex-column">
+    <header>
+        <nav class="navbar navbar-dark navbar-expand-md bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="fas fa-bars"></span>
+          
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a class="navbar-brand" href="#"><i class="far fa fa-cloud-sun-rain px-2"></i>Weather Dashboard</a><span
+            class="sr-only">(current)</span>
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="https://github.com/MwansaMwango/weather-dashboard#readme">About</a>
+            </li>
+            </ul>
+        </div>
+        </nav>
+    </header>
+
+    <main id="page-content">
+        <div class="container">
+            <div class="jumbotron p-2 jumbotron-fluid row bg-info">
+                <div class="container">
+                    <h1 class="d-flex justify-content-center">Weather Dashboard</h1>
+                    <p class="lead d-flex justify-content-center">A simple app thats retrieved weather data for multiple cities</p>
+                </div> 
+            </div>
+          
+                
+                <section>
+                  <div class="container">
+                    <div class="row">
+                      <!-- New code goes here -->
+                      
+                      
+                      <div class="col-lg-3 d-flex flex-column">
+                        
+                        <h4 class="my-4 text-light">Search for a City:</h4>
+                        <div class="d-flex mb-3">
+                          <input id="search-term" class="form-control mr-1" type="text" placeholder="Search" aria-label="Search">
+                        
+                            <button id="search-btn" class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
+              
+                        </div>
+                        <div id="cities-group">
+             
+                        </div>
+                        
+                      </div>
+                      <!-- /.col-lg-3 -->
+                      
+                      <div class="col-lg-9 d-flex flex-column">
+                        <section class="card px-3 pb-3 my-3 bg-secondary text-white">
+                          <div class="d-flex">
+                            <div id="currentCity" current class="display-4 mr-4">Current weather and forecasts in your city!</div>
+                            <h2 id="currentDate" class="display-4 d-flex justify-content-center mx-2"></h2>
+                            <img src=" " id="currentWeatherIcon" class="mx-2">
+                          </div>
+                        
+                            <p class="lead"><span id="currentTemp"></span></p>
+                            <p class="lead"><span id="currentHumidity"></span></p>
+                            <p class="lead"><span id="currentWindSpeed"></span></p>
+                            <div class="d-flex mb-auto">
+                              <p id="UVlabel" class="lead"></p>
+                              <span id="currentUVIndex" class="lead"></span>
+                            </div>
+                        </section>
+
+                    <section class="d-flex-md mb-auto forecast">
+                      <div class="card px-3 bg-light">
+                        <h4 class="my-3">5-Day Forecast</h4>
+                        
+                        <div id="forecast-card-group" class="card-deck">
+
+                        </div>
+                      </div> 
+                      <!-- / card card-decks -->
+                    </section>
+            
+                  </div>
+                  <!-- /.col-lg-9 -->
+
+                </div>
+              </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer id="sticky-footer" class="py-3 bg-dark text-white-50">
+      <div class="container text-center">
+        <small>Copyright &copy; 2020 Weather Dashboard</small>
+      </div>
+    </footer>
+    <!-- Use Moment JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
